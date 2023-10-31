@@ -1,0 +1,553 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.TaskAddForm {
+  max-width: 100vw;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar .left {
+  display: flex;
+  align-items: center;
+}
+.navbar .logo .icon {
+  color: red;
+  font-size: xx-large;
+  margin-left: 10px;
+}
+
+.navbar .logo span {
+  font-size: large;
+  font-weight: bold;
+}
+.navContent {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+/*  */
+.sidebar .logo .icon {
+  color: red;
+  font-size: 2rem;
+}
+.sidebar .user {
+  display: flex;
+  margin: auto 1.3rem;
+  align-items: center;
+}
+.sidebar .user .tag {
+  margin-left: 1rem;
+  font-size: large;
+  font-weight: 350;
+}
+.sidebar .userImg {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  object-fit: cover;
+  background-color: gray;
+}
+/* below rule is for sidebar links */
+.bgBlack {
+  background-color: black;
+  color: white;
+}
+
+/* main home page */
+.mainFeed {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+/*  */
+.card {
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  width: 20rem;
+}
+.card > img {
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  object-fit: cover;
+  min-width: 100%;
+  /* max-height: 75%; */
+  /* height: 75%; */
+  /* background-color: black; */
+  height: 12rem;
+}
+.card > div {
+  margin: 5px 5px auto;
+
+  display: flex;
+}
+.card .details {
+  margin-left: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.card .avatar {
+  object-fit: cover;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.card .title {
+  min-height: 3rem;
+  text-align: left;
+  max-width: 17rem;
+  /* limit to one line */
+  flex: 1; /* Take up the remaining space */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  font-weight: bold;
+}
+.card .viewsDate {
+  font-size: small;
+}
+
+/*  */
+.videoPlayerWrapper {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+}
+.videoPlayerWrapper .video,
+.recomendations {
+  margin-top: 20px;
+}
+.recomendations {
+  width: 35%;
+}
+.video {
+  width: 55%;
+}
+.video video {
+  background-color: black;
+  width: 100%;
+  height: 21rem;
+}
+
+/*  */
+.video .title {
+  text-align: left; /* Align text to the left */
+  font-size: larger;
+  font-weight: bold;
+}
+
+.video .channelName {
+  font-weight: bold;
+}
+.video .subs {
+  font-size: small;
+}
+.video .nameNsubs {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.video .subUnsub {
+  font-size: large;
+}
+.video .channelStrip {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px auto;
+}
+.video .viewsNdate {
+  font-weight: bold;
+}
+
+/*  */
+.singleComment {
+  margin: 20px auto;
+  display: flex;
+  /* background-color: lightgray; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px 10px 0;
+  border-radius: 0.5rem;
+}
+.singleComment img {
+  /* border-radius: 50%; */
+  height: 45px;
+  width: 45px;
+}
+.singleComment .details {
+  margin-left: 10px;
+  text-align: left;
+}
+.singleComment .commentDeleteBtn {
+  margin-left: auto;
+}
+.singleComment .user {
+  font-weight: bold;
+}
+.singleComment .date {
+  font-size: small;
+  color: gray;
+}
+.singleComment .comment {
+  margin-top: 10px;
+}
+
+/*  */
+.commentInput {
+  position: relative;
+}
+.commentInput button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.commentInput textarea {
+  width: 100%;
+  padding: 10px;
+}
+/*  */
+.recomendationCard {
+  cursor: pointer;
+  height: auto;
+  width: 100%;
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-bottom: 20px;
+}
+.recomendationCard img {
+  object-fit: cover;
+  width: 50%;
+  max-height: 130px;
+  border-radius: 8px;
+}
+.recomendationCard > div {
+  margin-left: 0.1rem;
+  margin-right: 0.3rem;
+  max-width: 11.7rem;
+}
+
+.recomendationCard .channelName,
+.recomendationCard .viewsDate {
+  color: gray;
+  /* limit to 1 lines */
+  flex: 1; /* Take up the remaining space */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  /*  */
+  margin-top: 1rem;
+
+  text-align: left;
+}
+
+.recomendationCard .title,
+.UpdateVideoCardBox .title {
+  font-weight: bold;
+  text-align: left;
+  /* limit to 2 lines */
+  flex: 1; /* Take up the remaining space */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+/*  */
+.myAccount {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 1rem;
+  padding: 1rem;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.myAccount .myDetails {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.myDetails img {
+  object-fit: cover;
+  background-color: gray;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+}
+
+.myInfo {
+  margin: 20px;
+  text-align: left;
+}
+.myInfo .name {
+  font-weight: bold;
+  font-size: large;
+}
+.myInfo .email {
+  color: rgb(112, 112, 112);
+}
+.myAccount .btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.btns button,
+.updateAccBtn {
+  width: 15rem;
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+/*  */
+.UpdateVideoCardBox .desc {
+  /* limit to 2 lines */
+  flex: 1; /* Take up the remaining space */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+.UpdateVideoCardBox {
+  width: 45%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 10px;
+  padding: 5px;
+  max-width: 32rem;
+  display: flex;
+  border-radius: 0.5rem;
+}
+.UpdateVideoCardBox .details {
+  /* width: 100%; */
+  max-width: 8rem;
+  text-align: left;
+  margin-left: 10px;
+
+}
+.UpdateVideoCardBox .viewsDate {
+  /* limit them to 2 lines */
+  /* limit to 2 lines */
+  flex: 1; /* Take up the remaining space */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  
+}
+.UpdateVideoCardBox .img {
+  cursor: pointer;
+  width: 18rem;
+height: 10rem;
+
+
+}
+.UpdateVideoCardBox .imgContainer {
+  position: relative;
+}
+.UpdateVideoCardBox .icons {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.UpdateVideoCardBox .icon {
+  border-radius: 50%;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: xx-large;
+  background-color: #fff;
+}
+/*  */
+.updateVideosPage {
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*  */
+.sidebar .lowerLinks {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar .upload,
+.sidebar .login {
+  margin: 10px auto 10px 1rem;
+}
+.sidebar .profile {
+  margin-top: 10px;
+}
+/*  */
+
+.picUpload .pic {
+  position: relative;
+}
+.picUpload .fileName {
+  /* vertical centering */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 1rem;
+  display: inline-block;
+  width: 20rem;
+}
+/*  */
+.SearchVideoCard {
+  cursor: pointer;
+
+  max-width: 100%;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 0.5rem;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+}
+.SearchVideoCard > img {
+  border-radius: 0.7rem;
+  width: 22rem;
+  height: 13rem;
+  object-fit: cover;
+  margin-left: 1rem;
+}
+.SearchVideoCard .right {
+  color: rgb(87, 87, 87);
+  text-align: left;
+  margin-left: 2rem;
+  max-width: 60%;
+}
+.SearchVideoCard .title,
+.SearchVideoCard .desc {
+  /* limit to 2 lines */
+
+  flex: 1; /* Take up the remaining space */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  /*  */
+}
+.SearchVideoCard .title {
+  font-weight: bold;
+  font-size: larger;
+  color: black;
+}
+.SearchVideoCard .viewsNdate {
+  font-size: small;
+}
+.SearchVideoCard .channel {
+  margin: 1rem auto;
+
+  display: flex;
+  align-items: center;
+}
+.SearchVideoCard .channel .name {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  /* CSS rules for tablets go here */
+  .SearchVideoCard .right {
+    max-width: 100%;
+    /* max-width: 38%; */
+    margin: auto 1rem;
+  }
+  .UpdateVideoCardBox {
+    width: 95%;
+  }
+}
+/* skleton */
+.card .btm {
+  display: flex;
+}
+
+@media only screen and (max-width: 479px) {
+  /* Your CSS styles for mobile devices go here */
+  .card {
+    /* on mainfeed */
+    width: 90%;
+  }
+
+  .recomendations {
+    /* aside of videoplayer */
+    width: 90%;
+  }
+  .video {
+    width: 95%;
+  }
+  .video video {
+    /* player box */
+    height: 12.5rem;
+  }
+
+  .SearchVideoCard > img {
+    margin: auto;
+  }
+  .SearchVideoCard {
+    flex-wrap: wrap;
+  }
+  .SearchVideoCard .right {
+    max-width: 100%;
+    margin: auto 1rem;
+  }
+  .myDetails img {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .SearchVideoCard .right {
+    width: 100%;
+  }
+  .UpdateVideoCardBox .imgContainer {
+    width: 60%;
+  }
+}
